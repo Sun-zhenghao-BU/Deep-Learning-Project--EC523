@@ -1,18 +1,16 @@
 # Image Stylization based on Deep Convolutional Neural Network
 
-Our project will take PyTorch as the core framework and use Python language to write relevant programs. Using the method of transfer learning, the pre-trained VGG-16 network is directly transferred to our program. The style and content of the image are separated by using the characteristics of retaining 
-semantic information at the high level and learning texture and other simple information at the bottom of the CNN network, and the input style image and 
-content image are reorganized to form a stylized image. Finally, We will try to use QT to design GUI to enhance usability and to build a user-friendly 
-system that can accurately and quickly meet individual personalized needs.
+
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+The project aims to design a deep convolutional neural network via transfer learning to apply special art effects to base/content image by using style/reference image. The baseline model applies the pre-trained VGG-16 network. The style and content of the image are separated by using the characteristics of retaining 
+semantic information at the high level and learning texture and other simple information at the bottom of the CNN network. Then, the input style image and content image are re-organized to form a stylized image. Finally, We seek to use QT to design GUI to build a user-friendly interface which can accurately and quickly show the output image and achieve personalization.
 
 ## Getting Started
 
 ### Dependencies
-
+The project is implemented with Python 3.9 along with PyTorch and Keras.
 ### Installing
 
 ### Executing program
