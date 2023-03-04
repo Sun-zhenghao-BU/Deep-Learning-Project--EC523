@@ -23,7 +23,6 @@ Some Descriptions
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">EC523-Project</h3>
@@ -72,18 +71,33 @@ Some Descriptions
 <!-- GETTING STARTED -->
 ## Getting Started
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!--PREREQUISITES-->
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!--INSTALLATION-->
 ### Installation
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
 <!--USAGE-->
 ## Usage
 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+                     
 <!-- LICENSE -->
 ## License
 
