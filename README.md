@@ -25,7 +25,7 @@ Some Descriptions
   <a href="https://github.com/github_username/repo_name">
   </a>
 
-<h3 align="center">EC523-Project</h3>
+<h3 align="center">Image Stylization based on Deep Convolutional Neural Network</h3>
 
   <p align="center">
     project_description
