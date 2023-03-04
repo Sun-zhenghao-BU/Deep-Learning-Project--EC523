@@ -18,10 +18,13 @@ An in-depth paragraph about your project and overview of use.
 
 ## Authors
 
-Zhenghao Sun [szh1007@bu.edu]
-Shangzhou Yin [syin10@bu.edu]
-Guangrui Ding [grding@bu.edu]
-Tom Panenko [tompan@bu.edu]
+Zhenghao Sun    &nbsp; szh1007@bu.edu
+
+Shangzhou Yin  &nbsp;  syin10@bu.edu
+
+Guangrui Ding  &nbsp;  grding@bu.edu
+
+Tom Panenko  &nbsp; tompan@bu.edu
 
 ## Version History
 
