@@ -4,7 +4,7 @@
 
 ## Description
 
-The project aims to design a deep convolutional neural network via transfer learning to apply special art effects to base/content image by using style/reference image. The baseline model applies the pre-trained VGG-16 network. The style and content of the image are separated by using the characteristics of retaining 
+The project aims to design a deep convolutional neural network via transfer learning to apply special art effects to base/content image with style/reference image. The baseline model applies the pre-trained VGG-16 network. The style and content of the image are separated by using the characteristics of retaining 
 semantic information at the high level and learning texture and other simple information at the bottom of the CNN network. Then, the input style image and content image are re-organized to form a stylized image. In addition to this, we seek to use QT to design a GUI to accurately and quickly show the output image and this improves user experience.
 
 ## Getting Started
