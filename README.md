@@ -77,7 +77,6 @@ Some Descriptions
 <!--PREREQUISITES-->
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
