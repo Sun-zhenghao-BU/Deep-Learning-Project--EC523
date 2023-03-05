@@ -13,7 +13,13 @@ semantic information at the high level and learning texture and other simple inf
 The project is implemented with Python 3.9 along with PyTorch and Keras. 
 The GUI Interface is designed with QT(version).
 ### Installing
+We are tring to use Deep convolutional neural network model to complete our project.
 
+So we have to setup our enivironment first. They can be activated with:
+
+```
+pip install -r requirements.txt
+```
 ### Executing program
 
 ## Help
