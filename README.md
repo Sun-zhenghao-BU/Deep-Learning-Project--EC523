@@ -9,13 +9,13 @@ semantic information at the high level and learning texture and other simple inf
 
 ## Getting Started
 
-## Conda Environment Setup
+### Conda Environment Setup
 
 To setup a conda environment with required dependencies, first install your favorite flavor of anaconda.
 - For miniconda: [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - For full Anaconda: [Anaconda](https://www.anaconda.com/products/distribution)
 
-## Configure environment.
+### Configure environment.
 
 Choose the `environment-XX.yml` file that best matches your system configuration.
 
@@ -31,7 +31,7 @@ conda env create -f YOUR_CONFIG.yml
 The environment will be created according to the configuration chosen, and can then be activated with:
 
 ```
-conda activate csna
+conda activate dl523
 ```
 
 ### Installing
