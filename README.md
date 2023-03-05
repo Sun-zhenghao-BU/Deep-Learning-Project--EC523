@@ -12,10 +12,15 @@ semantic information at the high level and learning texture and other simple inf
 ### Dependencies
 The project is implemented with Python 3.9 along with PyTorch and Keras. 
 The GUI Interface is designed with QT(version).
-### Installing
-We are tring to use Deep convolutional neural network model to complete our project.
 
-So we have to setup our enivironment first. They can be activated with:
+## Conda Environment Setup
+
+To setup a conda environment with required dependencies, first install your favorite flavor of anaconda.
+- For miniconda: [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- For full Anaconda: [Anaconda](https://www.anaconda.com/products/distribution)
+
+### Installing
+Before starting our work, we have to setup our enivironment first and add all of the dependencies we need. They can be activated with:
 
 ```
 pip install -r requirements.txt
