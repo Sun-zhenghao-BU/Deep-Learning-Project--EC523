@@ -1,0 +1,19 @@
+# To run: conda env create -f environment-lnx-cuda.yml
+name: dl523
+channels:
+    - conda-forge
+dependencies:
+    - python=3.6
+    - pip
+    - Pillow
+    - matplotlib
+    - numpy
+    - pandas
+    - cudatoolkit=11.6
+    - pip:
+        - torch
+        - torchvision
+        - kaggle
+        - pydicom
+        - opencv-python
+        - nibabel
