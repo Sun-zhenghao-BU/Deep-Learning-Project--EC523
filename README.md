@@ -40,8 +40,6 @@ Before starting our work, we have to setup our enivironment first and add all of
 ```
 pip install -r requirements.txt
 ```
-### Executing program
-
 ## Help
 
 ## Authors
