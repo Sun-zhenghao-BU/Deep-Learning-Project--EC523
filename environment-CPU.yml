@@ -1,0 +1,11 @@
+# To run: conda env create -f environment-CPU.yml
+name: csna
+channels:
+    - conda-forge
+dependencies:
+    - python=3.9
+    - pip
+    - matplotlib
+    - pandas
+    - pip:
+        - -r requirements.txt
