@@ -15,6 +15,7 @@ if use_gpu:
     cnn = cnn.cuda()
 
 
+# Define the function to load the image
 def imgLoad(path=None):
     img = Image.open(path)
     img = transform(img)
@@ -25,6 +26,7 @@ def imgLoad(path=None):
 ToPIL = torchvision.transforms.ToPILImage()
 
 
+# Define the function to show the image
 def imgShow(img, title=None):
     img = img.clone().cpu()
     img = img.view(3, 224, 224)
@@ -167,9 +169,9 @@ def closure():
     return style_score + content_score
 
 
+# Begin our transfer Process
 while run[0] <= n_epoch / 10:
     optimizer.step(closure)
-
 
 parameter.data.clamp_(0, 1)
 plt.figure()
