@@ -1,9 +1,9 @@
 # To run: conda env create -f environment-lnx-cuda.yml
-name: dl523
+name: pytorchenv
 channels:
     - conda-forge
 dependencies:
-    - python=3.6
+    - python=3.9
     - pip
     - Pillow
     - matplotlib
