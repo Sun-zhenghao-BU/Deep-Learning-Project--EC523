@@ -1,5 +1,5 @@
 # To run: conda env create -f environment-CPU.yml
-name: csna
+name: pytorchenv
 channels:
     - conda-forge
 dependencies:
