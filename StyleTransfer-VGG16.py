@@ -43,6 +43,9 @@ style_img = Variable(style_img).cpu()
 print(content_img.size())
 print(style_img.size())
 
+imgShow(content_img, title='Content Image')
+imgShow(style_img, title='Style Image')
+
 
 # define content loss function
 class Content_loss(torch.nn.Module):
@@ -164,7 +167,7 @@ def closure():
     return style_score + content_score
 
 
-while run[0] <= n_epoch:
+while run[0] <= n_epoch / 10:
     optimizer.step(closure)
 
 
