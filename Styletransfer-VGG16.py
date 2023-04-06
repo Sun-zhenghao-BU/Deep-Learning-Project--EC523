@@ -33,12 +33,15 @@ def imgShow(img, title=None):
     if title is not None:
         plt.title(title)
     plt.imshow(img)
+    plt.show()
 
 
 content_img = imgLoad("TestPicture/image6.jpg")
 content_img = Variable(content_img).cpu()
 style_img = imgLoad("TestPicture/image8.jpg")
 style_img = Variable(style_img).cpu()
+imgShow(content_img, title='Content image')
+imgShow(style_img, title='Style image')
 print(content_img.size())
 print(style_img.size())
 
@@ -165,7 +168,6 @@ def closure():
 
 while run[0] <= n_epoch / 10:
     optimizer.step(closure)
-
 
 parameter.data.clamp_(0, 1)
 plt.figure()
