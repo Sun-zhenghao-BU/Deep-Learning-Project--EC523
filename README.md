@@ -41,7 +41,6 @@ Before starting our work, we have to setup our enivironment first and add all of
 ```
 pip install -r requirements.txt
 ```
-## Help
 
 ## Authors
 
@@ -59,4 +58,4 @@ Tom Panenko  &nbsp; tompan@bu.edu
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## Acknowledgments
+
