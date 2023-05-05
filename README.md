@@ -41,9 +41,9 @@ pip install -r requirements.txt
 ```
 
 ### Running VGG-16 network
-Congratulations, When you are here, you are alreay to run this code. choose the StyleTransfer-VGG16.py file, and then select your content image and style image. 
+Congratulations, When you are here, you are ready to run this code. choose the StyleTransfer-VGG16.py file, and then select your content image and style image. 
 
-We have added sereval test images in the project folder. If you want to use your owen images, please remember replace the original imgae path with yours. 
+We have added sereval test images in the project folder. If you want to use your owen images, please remember replace the original image ```PATH``` with yours. 
 
 ```
 content_img = imgLoad("TestPicture/image13.jpg")
