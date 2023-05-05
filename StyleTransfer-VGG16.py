@@ -18,6 +18,7 @@ if use_gpu:
 # Define the function to load the image
 def imgLoad(path=None):
     img = Image.open(path)
+    img = img.convert("RGB")
     img = transform(img)
     img = img.unsqueeze(0)
     return img
@@ -35,12 +36,13 @@ def imgShow(img, title=None):
     if title is not None:
         plt.title(title)
     plt.imshow(img)
+    plt.axis('off')
     plt.show()
 
 
-content_img = imgLoad("TestPicture/image6.jpg")
+content_img = imgLoad("TestPicture/image13.jpg")
 content_img = Variable(content_img).cpu()
-style_img = imgLoad("TestPicture/image8.jpg")
+style_img = imgLoad("TestPicture/image11.jpg")
 style_img = Variable(style_img).cpu()
 print(content_img.size())
 print(style_img.size())
@@ -145,7 +147,7 @@ input_img = content_img.clone()
 parameter = torch.nn.Parameter(input_img.data)
 optimizer = torch.optim.LBFGS([parameter])
 
-n_epoch = 20
+n_epoch = 200
 
 run = [0]
 
@@ -170,7 +172,7 @@ def closure():
 
 
 # Begin our transfer Process
-while run[0] <= n_epoch / 10:
+while run[0] < n_epoch:
     optimizer.step(closure)
 
 parameter.data.clamp_(0, 1)

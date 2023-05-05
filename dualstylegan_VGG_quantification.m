@@ -1,0 +1,10 @@
+ref_filename='a.png';
+dual_filename='b.png';
+VGG_filename='c.png';
+ref_image=imread(ref_filename);
+dual_image=imread(dual_filename);
+VGG_image=imread(VGG_filename);
+[dual_ssimval,dual_ssimmap]=ssim(dual_image,ref_image);
+[VGG_ssimval,VGG_ssimmap]=ssim(VGG_image,ref_image);
+[dual_psnr,dual_snr]=psnr(dual_image,ref_image);
+[VGG_psnr,VGG_snr=psnr(VGG_image,ref_image);
