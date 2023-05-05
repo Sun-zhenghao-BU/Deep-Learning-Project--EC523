@@ -51,7 +51,7 @@ content_img = imgLoad("TestPicture/image13.jpg")
 style_img = imgLoad("TestPicture/image11.jpg")
 ```
 
-After that, you can change the weight of content, weight of style, and num of epoch:
+After that, you can change the weight of content, weight of style, and num of epoch(All of this parameters can be changed by yourself):
 
 ```
 content_weight = 1
