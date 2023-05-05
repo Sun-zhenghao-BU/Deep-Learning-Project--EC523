@@ -47,8 +47,21 @@ We have added sereval test images in the project folder. If you want to use your
 
 ```
 content_img = imgLoad("TestPicture/image13.jpg")
+
 style_img = imgLoad("TestPicture/image11.jpg")
 ```
+
+After that, you can change the weight of content, weight of style, and num of epoch:
+
+```
+content_weight = 1
+
+style_weight = 1000
+
+n_epoch = 200
+```
+
+Now, you can run this file and wait it patiently, then you will watch the result of this style transfer system.
 
 ## Authors
 
