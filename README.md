@@ -73,8 +73,6 @@ Guangrui Ding  &nbsp;  grding@bu.edu
 
 Tom Panenko  &nbsp; tompan@bu.edu
 
-## Version History
-
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
