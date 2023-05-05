@@ -36,10 +36,11 @@ def imgShow(img, title=None):
     if title is not None:
         plt.title(title)
     plt.imshow(img)
+    plt.axis('off')
     plt.show()
 
 
-content_img = imgLoad("TestPicture/image12.jpg")
+content_img = imgLoad("TestPicture/image13.jpg")
 content_img = Variable(content_img).cpu()
 style_img = imgLoad("TestPicture/image11.jpg")
 style_img = Variable(style_img).cpu()
@@ -146,7 +147,7 @@ input_img = content_img.clone()
 parameter = torch.nn.Parameter(input_img.data)
 optimizer = torch.optim.LBFGS([parameter])
 
-n_epoch = 100
+n_epoch = 200
 
 run = [0]
 
@@ -171,7 +172,7 @@ def closure():
 
 
 # Begin our transfer Process
-while run[0] <= n_epoch:
+while run[0] < n_epoch:
     optimizer.step(closure)
 
 parameter.data.clamp_(0, 1)
