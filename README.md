@@ -1,7 +1,5 @@
 # Image Stylization based on Deep Convolutional Neural Network
 
-
-
 ## Description
 
 The project aims to design a deep convolutional neural network via transfer learning to apply special art effects to base/content image with style/reference image. The baseline model applies the pre-trained VGG-16 network. The style and content of the image are separated by using the characteristics of retaining semantic information at the high level and learning texture and other simple information at the bottom of the CNN network. Then, the input style image and content image are re-organized to form a stylized image. 
@@ -41,6 +39,9 @@ Before starting our work, we have to setup our enivironment first and add all of
 ```
 pip install -r requirements.txt
 ```
+
+### Running VGG-16 network
+Congratulations, When you are here, you are alreay to run this code. choose the StyleTransfer-VGG16.py file, and then select your content image and style image. We have added sereval test images in the project folder. If you want to use your owen images, please remember change the imgae path of yours.
 
 ## Authors
 
