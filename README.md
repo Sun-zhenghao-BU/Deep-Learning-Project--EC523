@@ -68,8 +68,19 @@ Now, you can run this file and wait it patiently, then you will watch the result
 
 ### Running DualStyleGAN network
 
-
-
+Portrait Generation
+Generate portraits images
+```
+python generate.py
+```
+You need to specify the style type with ```--style``` and the file name ```--namr```
+```
+python generate.py --style arcane --name arcane_generate
+```
+Next, you have to specify the weight to adjust the degree of style with ```--weight```, keep the intrinsic style code, extrinsic color code or extrinsic structure code fixed using --fix_content, --fix_color and --fix_structure.
+```
+python generate.py --style caricature --name caricature_generate --weight 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 --fix_content
+```
 ## Authors
 
 Zhenghao Sun    &nbsp; szh1007@bu.edu
