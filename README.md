@@ -68,7 +68,7 @@ Now, you can run this file and wait it patiently, then you will watch the result
 
 
 
-### Running DualStyleGAN network with pretrain model
+### Running DualStyleGAN network with pretrain models
 
 Under Running DualStyleGAN folder
 You can simply run DualStyleGAN.ipynb with GoogleColab
