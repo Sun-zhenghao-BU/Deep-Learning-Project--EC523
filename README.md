@@ -103,11 +103,11 @@ python generate.py --style caricature --name caricature_generate --weight 1 1 1 
 
 #### Training DualStyleGAN
 
-Download the supporting models to the ./checkpoint/ folder:
+Download the models to the ./checkpoint/ folder:
 
 Model	Description
-stylegan2-ffhq-config-f.pt	StyleGAN model trained on FFHQ taken from rosinality.
-model_ir_se50.pth	Pretrained IR-SE50 model taken from TreB1eN for ID loss.
+```stylegan2-ffhq-config-f.pt```	is taken from rosinality.
+```model_ir_se50.pth``` is taken from TreB1eN for ID loss.
 
 #### Facial Destylization
 
@@ -144,6 +144,7 @@ If the styles is very different from real faces, set ```--truncation``` to small
 
 
 #### Progressive Fine-Tuning
+
 ##### Stage 1 & 2: Pretrain DualStyleGAN on FFHQ. This model is obtained by:
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --master_port=8765 pretrain_dualstylegan.py --iter 3000 --batch 4 ./data/ffhq/lmdb/
