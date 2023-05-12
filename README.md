@@ -65,14 +65,17 @@ n_epoch = 200
 
 Now, you can run this file and wait it patiently, then you will watch the result of this style transfer system.
 
+
 ### Running DualStyleGAN network with pretrain model
 
 Under Running DualStyleGAN folder
 You can simply run DualStyleGAN.ipynb with GoogleColab
 
+
 ### Running DualStyleGAN network
 
 This part is under DualStyleGAN folder
+
 
 #### Exemplar-Based Style Transfer
 
@@ -80,6 +83,7 @@ transfer the style of cartoon image into a face
 ```
 python style_transfer.py
 ```
+
 
 #### Portrait Generation
 Generate portraits images
@@ -103,20 +107,26 @@ python generate.py --style caricature --name caricature_generate --weight 1 1 1 
 
 #### Training DualStyleGAN
 
+
 Download the models to the ./checkpoint/ folder:
 
 Model	Description
 ```stylegan2-ffhq-config-f.pt```	is taken from rosinality.
 ```model_ir_se50.pth``` is taken from TreB1eN for ID loss.
 
+
 #### Facial Destylization
 
+
 ##### Step 1: Prepare data. 
+
+
 Prepare the dataset in ./data/DATASET_NAME/images/train/. First create lmdb datasets:
 
 ```
 python ./model/stylegan/prepare_data.py --out LMDB_PATH --n_worker N_WORKER --size SIZE1,SIZE2,SIZE3,... DATASET_PATH
 ```
+
 
 ##### Step 2: Fine-tune StyleGAN. Fine-tune StyleGAN in distributed settings:
 
@@ -145,11 +155,15 @@ If the styles is very different from real faces, set ```--truncation``` to small
 
 #### Progressive Fine-Tuning
 
+
 ##### Stage 1 & 2: Pretrain DualStyleGAN on FFHQ. This model is obtained by:
+
 ```
 python -m torch.distributed.launch --nproc_per_node=1 --master_port=8765 pretrain_dualstylegan.py --iter 3000 --batch 4 ./data/ffhq/lmdb/
 ```
+
 where ```./data/ffhq/lmdb/ contains the lmdb data created from the FFHQ dataset via ./model/stylegan/prepare_data.py```.
+
 
 ##### Stage 3: Fine-Tune DualStyleGAN on Target Domain. Fine-tune DualStyleGAN in distributed settings:
 
@@ -157,6 +171,8 @@ where ```./data/ffhq/lmdb/ contains the lmdb data created from the FFHQ dataset 
 python -m torch.distributed.launch --nproc_per_node=N_GPU --master_port=PORT finetune_dualstylegan.py --iter ITERATIONS \ 
                           --batch BATCH_SIZE --ckpt PRETRAINED_MODEL_PATH --augment DATASET_NAME
 ```
+
+
 The loss term weights can be specified by ```--style_loss (λ_FM)```, ```--CX_loss (λ_CX)```, ```--perc_loss (λperc)```, ```--id_loss (λ_ID)``` and ```--L2_reg_loss (λreg)```. ```λID``` and ```λreg``` are suggested to be tuned for each style dataset to achieve ideal performance. More options can be found via python ```finetune_dualstylegan.py -h```.
 
 
