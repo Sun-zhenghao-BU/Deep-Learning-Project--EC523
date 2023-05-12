@@ -66,13 +66,16 @@ n_epoch = 200
 Now, you can run this file and wait it patiently, then you will watch the result of this style transfer system.
 
 ### Running DualStyleGAN network with pretrain model
+
 Under Running DualStyleGAN folder
 You can simply run DualStyleGAN.ipynb with GoogleColab
 
 ### Running DualStyleGAN network
+
 This part is under DualStyleGAN folder
 
 ## Exemplar-Based Style Transfer
+
 transfer the style of cartoon image into a face
 ```
 python style_transfer.py
@@ -80,17 +83,24 @@ python style_transfer.py
 
 ## Portrait Generation
 Generate portraits images
+
 ```
 python generate.py
 ```
+
 You need to specify the style type with ```--style``` and the file name ```--namr```
+
 ```
 python generate.py --style arcane --name arcane_generate
 ```
+
 Next, you have to specify the weight to adjust the degree of style with ```--weight```, keep the intrinsic style code, extrinsic color code or extrinsic structure code fixed using --fix_content, --fix_color and --fix_structure.
+
 ```
 python generate.py --style caricature --name caricature_generate --weight 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 --fix_content
 ```
+
+
 ## Training DualStyleGAN
 
 Download the supporting models to the ./checkpoint/ folder:
@@ -98,7 +108,9 @@ Download the supporting models to the ./checkpoint/ folder:
 Model	Description
 stylegan2-ffhq-config-f.pt	StyleGAN model trained on FFHQ taken from rosinality.
 model_ir_se50.pth	Pretrained IR-SE50 model taken from TreB1eN for ID loss.
+
 ## Facial Destylization
+
 # Step 1: Prepare data. 
 Prepare the dataset in ./data/DATASET_NAME/images/train/. First create lmdb datasets:
 
@@ -108,12 +120,15 @@ python ./model/stylegan/prepare_data.py --out LMDB_PATH --n_worker N_WORKER --si
 
 # Step 2: Fine-tune StyleGAN. Fine-tune StyleGAN in distributed settings:
 
+
 ```
 python -m torch.distributed.launch --nproc_per_node=N_GPU --master_port=PORT finetune_stylegan.py --batch BATCH_SIZE \
        --ckpt FFHQ_MODEL_PATH --iter ITERATIONS --style DATASET_NAME --augment LMDB_PATH
 ```
 
+
 # Step 3: Destylize artistic portraits.
+
 
 ```
 python destylize.py --model_name FINETUNED_MODEL_NAME --batch BATCH_SIZE --iter ITERATIONS DATASET_NAME
@@ -121,9 +136,12 @@ python destylize.py --model_name FINETUNED_MODEL_NAME --batch BATCH_SIZE --iter 
 
 The intrinsic and extrinsic style codes are saved in ```./checkpoint/cartoon/instyle_code.npy``` and ```./checkpoint/cartoon/exstyle_code.npy```, respectively. Intermediate results are saved in ```./log/cartoon/destylization/```. 
 
+
 To speed up destylization, set ```--batch``` to large value such as 16. 
 
+
 If the styles is very different from real faces, set ```--truncation``` to small value such as 0.5 to make the results more realistic (it enables DualStyleGAN to learn larger structrue deformations).
+
 
 ## Progressive Fine-Tuning
 # Stage 1 & 2: Pretrain DualStyleGAN on FFHQ. This model is obtained by:
@@ -145,7 +163,8 @@ The fine-tuned models can be found in ```./checkpoint/cartoon/generator-ITER.pt`
 
 
 # Latent Optimization and Sampling
-Refine extrinsic style code. Refine the color and structure styles to better fit the example style images.
+
+Refine extrinsic style code with the color and structure styles to fit the example style images more smoothly.
 
 ```
 python refine_exstyle.py --lr_color COLOR_LEARNING_RATE --lr_structure STRUCTURE_LEARNING_RATE DATASET_NAME
@@ -158,6 +177,7 @@ The refined extrinsic style codes are saved in ```./checkpoint/DATASET_NAME/refi
 Training sampling network. Train a sampling network to map unit Gaussian noises to the distribution of extrinsic style codes:
 
 ```python train_sampler.py DATASET_NAME```
+
 
 By default, the code will load ```refined_exstyle_code.npy```or ```exstyle_code.npy``` in ```./checkpoint/DATASET_NAME/```. Use ```--exstyle_path``` to specify other saved extrinsic style codes. The saved model can be found in ```./checkpoint/DATASET_NAME/sampler.pt```.
 
