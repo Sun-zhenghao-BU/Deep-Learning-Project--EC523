@@ -65,6 +65,11 @@ n_epoch = 200
 
 Now, you can run this file and wait it patiently, then you will watch the result of this style transfer system.
 
+
+### Running DualStyleGAN network
+
+
+
 ## Authors
 
 Zhenghao Sun    &nbsp; szh1007@bu.edu
