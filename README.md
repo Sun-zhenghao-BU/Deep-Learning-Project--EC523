@@ -66,10 +66,15 @@ n_epoch = 200
 Now, you can run this file and wait it patiently, then you will watch the result of this style transfer system.
 
 
+
+
 ### Running DualStyleGAN network with pretrain model
 
 Under Running DualStyleGAN folder
 You can simply run DualStyleGAN.ipynb with GoogleColab
+
+
+
 
 
 ### Running DualStyleGAN network
